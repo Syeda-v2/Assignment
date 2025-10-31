@@ -6,29 +6,28 @@ body {
 
 h2 {
   font-size: 24px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
 }
 
-.stories {
+ul {
   list-style: none;
-  padding: 0;
+  padding: 20px;
+  margin: 10px;
   display: flex;
-  gap: 20px;
   flex-wrap: nowrap; 
-  overflow-x: auto;  
 }
 
-.stories li {
+li {
   width: 180px;
   border-right: 1px solid #e5e5e5;
   padding-right: 10px;
   margin-right: 10px;
-  flex-shrink: 0; 
 }
 
+li:last-child{
+  border-right: none;
+}
 
-.stories img {
+img {
   width: 100%;
   height: 110px;
   object-fit: cover;
