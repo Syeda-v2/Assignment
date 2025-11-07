@@ -11,6 +11,7 @@
 <body>
     
     <header>
+        <div class="head">
         <div class="contact-section">
             <div class="phone-section"><i class="fa-solid fa-phone"></i>
             <p>+123-456-7890</p></div>
@@ -23,17 +24,18 @@
             <i class="fa-brands fa-google-plus-g"></i>
             <i class="fa-brands fa-linkedin-in"></i>
         </div>
+        </div>
     </header>
     
     <section id="company">
         <h1 class="company-name">COMPANY NAME</h1>
-        <nav>
+        <nav class="navbar">
                <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
         
-        <ul class="navbar">
+        <ul>
             <li><i class="fa-solid fa-house"></i>
             <a href="">Home</a></li>
             <li><i class="fa-solid fa-file-lines"></i>
@@ -55,12 +57,14 @@
     <img class="slider-img" src="./images/slider.jpg" alt="image">
     
     <section id="msg-container">
-        <div class="form-box">
+        
+        
+            <div class="form-container">
             <form action="">
-                <label for="name" >Name</label>
+                <label for="name" style="margin-bottom: 15px;">Name</label>
                 <input type="text" name="name" placeholder="enter name" required>
         
-                <label for="email">email</label>
+                <label for="email" style="margin: 15px 0px;">email</label>
                 <input type="email" name="email" placeholder="info@gmail.com" required>
         
                 <input type="checkbox" id="remember">
@@ -68,6 +72,7 @@
         
                 <button>SUBMIT</button>
             </form>
+            
         </div>
         <div class="Leave-us-msg">
             <h4 ><span class="mone">LEAVE</span> US A MESSAGE</h4>
@@ -77,48 +82,55 @@
     </section>
     
     <section id="features-container">
+        <div class="feature-sets">
+        <div class="feature-set">
         <div class="feature">
             <i class="fa-solid fa-wrench"></i>
             <div class="info-container">
             <h4><span class="mone">Lnterac</span>tive Elements</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
        </div></div>
         <div class="feature">
             <i class="fa-solid fa-heart-pulse"></i>
              <div class="info-container">
             <h4><span class="mone">Donate</span></h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
         </div></div>
         <div class="feature">
             <i class="fa-solid fa-dollar-sign"></i>
             <div class="info-container">
             <h4><span class="mone">Donate</span></h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
-        </div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
+        </div></div></div>
+        <div class="feature-set">
         <div class="feature">
             <i class="fa-regular fa-credit-card"></i>
             <div class="info-container">
             <h4><span class="mone">Contribu</span>te</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
         </div></div>
         <div class="feature">
             <i class="fa-solid fa-user"></i>
             <div class="info-container">
             <h4><span class="mone">Particip</span>ate</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
         </div></div>
         <div class="feature">
             <i class="fa-solid fa-wrench"></i>
               <div class="info-container">
             <h4><span class="mone">Lnterac</span>tive Elements</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem molestias itaque architecto dolore asperiores animi, nemo voluptate nam sunt consequatur at praesentium accusamus reprehenderit ipsum, unde repellat et.</p>
-        </div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores rem.</p>
+        </div></div></div></div>
     </section>
     
     <section id="About-us-container">
         <div class="msg">
             <h3>ABOUT US</h3>
-            <i class="fa-solid fa-droplet"></i>
+            <div class="divider">
+                <span class="line"></span>
+                <span class="icon"><i class="fa-solid fa-droplet"></i></span>
+                <span class="line"></span>
+            </div>
             <p>Charixy is the charity,Non-profit government orgnization,fundraising.Our
                activities help entrepreneurs get the targert.</p>
             <img src="./images/about.jpg" alt="image">
@@ -146,7 +158,11 @@
     <section id="causes-container">  
         <div class="msg">
             <h3>OUR CAUSES</h3>
-            <i class="fa-solid fa-droplet"></i>
+            <div class="divider">
+                <span class="line"></span>
+                <span class="icon"><i class="fa-solid fa-droplet"></i></span>
+                <span class="line"></span>
+            </div>
             <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
             
         </div>
@@ -226,85 +242,126 @@
         </div>
     </section>
 
-    <section id="story-container">
-        <div class="story">
-            <video src=""></video>
-            <h4>HEART BROKEN STORY</h4>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Lpsum decided to leave for World of Grammar.
-                Coast of Semantic,large language ocean.A small river named Duden flows by their place and supplies it with the neccessary regelialia.it is a paradisematic country,in which roasted.unorthographic life One day however a small line of blind text by theall-powerful. 
-            </p>
-            <p>Read more>></p>
+   <section id="video-section">
+        <div class="video-message">
+            <div class="video-story">
+                <img src="./images/video-img.jpg" alt="bg" class="img1">
+                <img src="./images/play-btn.png" alt="ol" class="img2">
+ 
+ 
+ 
+            </div>
+ 
+            <div class="story-text">
+                <h3 style="font-size: 1.7rem; color:white;" ><span class="mone"
+                        style="font-size: 1.7rem;"><b>HEAR</b></span>T BROKEN STORY</h3>
+ 
+                <p style="color: white; font-size: 16px; padding-bottom:10px; line-height: 1.5;"  >
+                    Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
+                    life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the
+                    far World of Gammar.
+                </p>
+                <p style="color: white; font-size: 16px; padding-bottom:10px; line-height: 1.5;">
+                    Coast of semantics, large language ocean. A small river named Duden flows by their place and
+                    supplies it with the necessary regelialia. It is a paradisematic country, in which roasted
+                    unorthographic life One day however a small line of blind text by the all powerful
+                </p>
+                <a href="#readmore" style="color: white; text-decoration: none;">Read more >></a>
+            </div>
         </div>
     </section>
     
     <section id="gallary">
         <div class="msg">
-            <h4>OUR GALLARY</h4>
+            <h3>OUR GALLARY</h3>
+            <div class="divider">
+                <span class="line"></span>
+                <span class="icon"><i class="fa-solid fa-droplet"></i></span>
+                <span class="line"></span>
+            </div>
             <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
         </div>
         <div class="images">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="./images/gallery-1.jpg" alt="">
+            <img src="./images/gallery-2.jpg" alt="">
+            <img src="./images/gallery-3.jpg" alt="">
+            <img src="./images/gallery-4.jpg" alt="">
+            <img src="./images/gallery-5.jpg" alt="">
+            <img src="./images/gallery-6.jpg" alt="">
         </div>
     </section>
 
     <section id="volunteers">
         <div class="msg">
-            <h3>OUR GALLARY</h3>
+            <h3>OUR VOLUNTEER</h3>
+             <div class="divider">
+                <span class="line"></span>
+                <span class="icon"><i class="fa-solid fa-droplet"></i></span>
+                <span class="line"></span>
+            </div>
             <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
         </div>
         <div class="our-volunteers">
-            <div class="volunteer">
-                <img src="" alt="">
-                <p>Sara lian</p>
-                <p>volunteer</p>
-                <hr>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-google-plus-g"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div class="volunteer">
-                <img src="" alt="">
-                <p>Jack Doe</p>
+            <div class="volunteer" >
+                <img src="./images/volunteer-1.jpg" alt="">
+                <h4>Sara lian</h4>
                 <p>Volunteer</p>
-                <hr>
+                
+                <div class="volunteer-acconts">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-google-plus-g"></i>
                 <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div class="volunteer">
-                <img src="" alt="">
-                <p>Flora View</p>
+                </div>
+            <div class="volunteer" id="volunteer2">
+                <img src="./images/volunteer-2.jpg" alt="">
+                <h4>Jack Doe</h4>
                 <p>Volunteer</p>
-                <hr>
+                <div class="volunteer-acconts"></div>
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-google-plus-g"></i>
                 <i class="fa-brands fa-linkedin-in"></i>
+                </div>
             </div>
-            <div class="volunteer">
-                <img src="" alt="">
-                <p>johnny newmen</p>
+            <div class="volunteer" id="volunteer3">
+                <img src="./images/volunteer-3.jpg" alt="">
+                <h4>Flora View</h4>
                 <p>Volunteer</p>
-                <hr>
+                <div class="volunteer-acconts"></div>
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-google-plus-g"></i>
                 <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="volunteer" id="volunteer4">
+                <img src="./images/volunteer-4.jpg" alt="">
+                <h4>johnny newmen</h4>
+                <p>Volunteer</p>
+                <div class="volunteer-acconts"></div>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google-plus-g"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                </div>
             </div>
         </div>
+
+        <div class="dots">
+            <span class="dot" style="background-color: #ff4d2e;"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
     </section>
     <footer>
         <div id="footer-section1">
-            <div class="About-us">
-                <p>ABOUT US</p>
-                <ul class="">
+            <div class="footer-container">
+                <p><span class="mone"><b>ABOUT</b></span> US</p>
+                <ul style="list-style-type: none;">
                     <li>About us</li>
                     <li>Our Team</li>
                     <li>Volunteer Engagement</li>
@@ -312,9 +369,9 @@
                     <li>services</li>
                 </ul>
             </div>
-            <div class="About-us">
-                <p>DISCOVER</p>
-                <ul class="">
+            <div class="footer-container">
+                <p><span class="mone"><b>DISCO</b></span>VER</p>
+                <ul style="list-style-type: none;">
                     <li>Mission</li>
                     <li>Where We are Headed</li>
                     <li>History</li>
@@ -322,29 +379,35 @@
                     
                 </ul>
             </div>
-            <div class="About-us">
-                <p>QUICK LINK</p>
-                <ul class="">
+            <div class="footer-container" style="list-style-type: none;">
+                <p><span class="mone"><b>QUICK</b></span> LINK</p>
+                <ul style="list-style-type: none;">
                     <li>Earth hour</li>
                     <li>Save Water</li>
                     <li>Equality</li>
                     <li>Women</li>
                 </ul>
             </div>
-            <div class="About-us">
-                <p>TAGS</p>
+            <div class="footer-container">
+                <p><span class="mone"><b>TAGS</b></span></p>
+                <div class="btn">
                 <button>Faith</button>
                 <button>Forgiveness</button>
                 <button>Donation</button>
+                </div>
+                <div class="btn">
                 <button>Animals</button>
                 <button>Nature</button>
                 <button>Recycle</button>
+                </div>
             </div>
         </div>
         <div class="footer-section2">
-            <p>Sign Up For Our Newsletter</p>
+          <div class="sign-up">
+            <h3>Sign Up For Our Newsletter</h3>
             <input type="email" name="email" placeholder="Enter email">
             <button>SUBCRIBES NOW</button>
+            </div>
         </div>
         <div class="footer-section3">
             <p>Copyright 2017 All Right Reserved</p>
