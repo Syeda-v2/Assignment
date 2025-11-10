@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page">
     
     <header>
         <div class="head">
@@ -38,8 +39,17 @@
         <ul>
             <li><i class="fa-solid fa-house"></i>
             <a href="">Home</a></li>
+            <div class="dropdown">
             <li><i class="fa-solid fa-file-lines"></i>
             <a href="">Pages</a></li>
+             <div class="dropdown-content">
+      <a href="#">About Us</a>
+      <a href="#">Volunteer Detail</a>
+      <a href="#">Our Gallery</a>
+      <a href="#">Error 404</a>
+      <a href="#">Comming Soon</a>
+    </div>
+            </div>
             <li><i class="fa-solid fa-gear"></i>
             <a href="">Services</a></li>
             <li><i class="fa-solid fa-calendar-days"></i>
@@ -53,8 +63,11 @@
         </ul>
         
     </nav></section>
+
     
     <img class="slider-img" src="./images/slider.jpg" alt="image">
+
+   
     
     <section id="msg-container">
         
@@ -77,7 +90,7 @@
         <div class="Leave-us-msg">
             <h4 ><span class="mone">LEAVE</span> US A MESSAGE</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas soluta illo dolorem cupiditate, quis perferendis commodi minus culpa sunt, non veniam voluptatibus fuga laboriosam ab dolores hic voluptates pariatur odio!</p>
-            <p>Read more >> </p>
+            <br><p>Read more >> </p>
         </div>
     </section>
     
@@ -131,11 +144,18 @@
                 <span class="icon"><i class="fa-solid fa-droplet"></i></span>
                 <span class="line"></span>
             </div>
-            <p>Charixy is the charity,Non-profit government orgnization,fundraising.Our
+            <p id="message1">Charixy is the charity,Non-profit government orgnization,fundraising.Our
                activities help entrepreneurs get the targert.</p>
-            <img src="./images/about.jpg" alt="image">
+            
         </div>
-        <div id="offer" style="margin-top: 30px;">
+        
+        <div class="about-content">
+            <div class="about-image">
+            <img src="./images/about.jpg" alt="image">
+            </div>
+        
+            
+            <div class="about-left">
             <div class="benefit">
                 <h4><span class="mone">DONAT</span>ION</h4>
                 <p>Vision is our mission,restoring vision to people in developing nations is our cause.we are a nonprlocal  phy sicians</p>
@@ -144,6 +164,9 @@
                 <h4><span class="mone">FUNDR</span>ISE</h4>
                 <p>Vision is our mission,restoring vision to people in developing nations is our cause.we are a nonprlocal  phy sicians</p>
             </div>
+            </div>
+            
+            <div class="about-right">
             <div class="benefit">
                 <h4><span class="mone">SCHOL</span>ARSHIP</h4>
                 <p>Vision is our mission,restoring vision to people in developing nations is our cause.we are a nonprlocal  phy sicians</p>
@@ -152,10 +175,14 @@
                 <h4><span class="mone">VOLUN</span>TEER</h4>
                 <p>Vision is our mission,restoring vision to people in developing nations is our cause.we are a nonprlocal  phy sicians</p>
             </div>
+            </div>
+            
+        
         </div>
+        
     </section>
 
-    <section id="causes-container">  
+    <section id="causes-section">  
         <div class="msg">
             <h3>OUR CAUSES</h3>
             <div class="divider">
@@ -163,83 +190,76 @@
                 <span class="icon"><i class="fa-solid fa-droplet"></i></span>
                 <span class="line"></span>
             </div>
-            <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
+            <p id="message2">Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
             
         </div>
-        <div class="donated-container">
-            <div class="donated"> 
-                <div class="info">
-                    <img src="./images/causes-1.jpg" alt="image">
-                    <p style="color:black;"><span class="mone">Feed For</span> Hungry Child</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum incidunt tenetur quasi mollitia consequuntur quibusdam necessitatibus.</p>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 40%;">
-                            <span class="progress-value">40%</span>
-                        </div>
-                     </div> 
-                </div>
-                 <div class="donation-info">
-                <div class="amt-donated">
-                  <h4>Donated</h4>
-                  <p>$100.00</p>
-                </div>
-                <div class="goal">
-                  <h4>Goal</h4>
-                  <p>$2,500.00</p>
-                </div>
-            </div>
-        
-            <div class="donated">
-                <div class="info">
-                    <img src="./images/causes-2.jpg" alt="image">
-                    <p style="color:black;"><span class="mone">Feed For</span> Hungry Child</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum incidunt tenetur quasi mollitia consequuntur quibusdam necessitatibus.</p>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 40%;">
-                            <span class="progress-value">40%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="donation-info">
-                    <div class="amt-donated">
-                        <h4>Donated</h4>
-                        <p>$100.00</p>
-                    </div>
-                    <div class="goal">
-                        <h4>Goal</h4>
-                        <p>$2,500.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="donated">
-                <div  class="info">
-                    <img src="./images/causes-3.jpg" alt="image">
-                    <p style="color:black;"><span class="mone">Feed For</span> Hungry Child</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum incidunt tenetur quasi mollitia consequuntur quibusdam necessitatibus.</p>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 40%;">
-                            <span class="progress-value">40%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="donation-info">
-                    <div class="amt-donated">
-                        <h4>Donated</h4>
-                        <p>$100.00</p>
-                    </div>
-                    <div class="goal">
-                        <h4>Goal</h4>
-                        <p>$2,500.00</p>
-                    </div>
-                </div>
-            </div>
+         <div class="causes-container">
+    <div class="cause-card">
+      <img src="./images/causes-1.jpg" alt="Donation Clothes">
+      <h4 style="padding: 20px 30px;">Feed For Hungry Child</h4>
+      <p style="padding:0 30px;">Lorem ipsum dolor sit amet, consectetur elit. Sed eget lorem magna. Fusce eu urna.</p>
+
+      <div class="progress-container" style="padding-top: 30px;">
+        <div class="progress-bar">
+          <span style="width: 40%;"></span>
         </div>
+        <div class="progress-info" style="padding-top: 20px;">
+          <div>
+            <p>Donated</p>
+            <span>$100.00</span>
+          </div>
+          <div>
+            <p>Goal</p>
+            <span>$2,500.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cause-card">
+      <img src="./images/causes-2.jpg" alt="Hungry Child">
+      <h4 style="padding: 20px 30px;">Feed For Hungry Child</h4>
+      <p style="padding:0 30px;">Lorem ipsum dolor sit amet, consectetur elit. Sed eget lorem magna. Fusce eu urna.</p>
+
+      <div class="progress-container" style="padding-top: 30px;">
+        <div class="progress-bar">
+          <span style="width: 60%;"></span>
+        </div>
+        <div class="progress-info" style="padding-top: 20px;">
+          <div>
+            <p>Donated</p>
+            <span>$100.00</span>
+          </div>
+          <div>
+            <p>Goal</p>
+            <span>$2,500.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cause-card">
+      <img src="./images/causes-3.jpg" alt="Children in Need">
+      <h4 style="padding: 20px 30px;">Feed For Hungry Child</h4>
+      <p style="padding:0 30px;">Lorem ipsum dolor sit amet, consectetur elit. Sed eget lorem magna. Fusce eu urna.</p>
+
+      <div class="progress-container" style="padding-top: 30px;">
+        <div class="progress-bar">
+          <span style="width: 80%;"></span>
+        </div>
+        <div class="progress-info" style="padding-top: 20px;">
+          <div>
+            <p>Donated</p>
+            <span>$100.00</span>
+          </div>
+          <div>
+            <p>Goal</p>
+            <span>$2,500.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </section>
 
    <section id="video-section">
@@ -253,15 +273,15 @@
             </div>
  
             <div class="story-text">
-                <h3 style="font-size: 1.7rem; color:white;" ><span class="mone"
-                        style="font-size: 1.7rem;"><b>HEAR</b></span>T BROKEN STORY</h3>
+                <h3 style=" color:white;" ><span class="mone"
+                        ><b>HEAR</b></span>T BROKEN STORY</h3>
  
-                <p style="color: white; font-size: 16px; padding-bottom:10px; line-height: 1.5;"  >
+                <p style="color: white; padding-bottom:10px; line-height: 1.5;"  >
                     Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
                     life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the
                     far World of Gammar.
                 </p>
-                <p style="color: white; font-size: 16px; padding-bottom:10px; line-height: 1.5;">
+                <p style="color: white; padding-bottom:10px; line-height: 1.5;">
                     Coast of semantics, large language ocean. A small river named Duden flows by their place and
                     supplies it with the necessary regelialia. It is a paradisematic country, in which roasted
                     unorthographic life One day however a small line of blind text by the all powerful
@@ -279,15 +299,18 @@
                 <span class="icon"><i class="fa-solid fa-droplet"></i></span>
                 <span class="line"></span>
             </div>
-            <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
+            <p id="message3">Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
         </div>
         <div class="images">
-            <img src="./images/gallery-1.jpg" alt="">
+            <div class="image-set1">
+            <img src="./images/gallery-1.jpg" alt=""></div>
+            <div class="image-set2">
             <img src="./images/gallery-2.jpg" alt="">
-            <img src="./images/gallery-3.jpg" alt="">
-            <img src="./images/gallery-4.jpg" alt="">
+            <img src="./images/gallery-3.jpg" alt=""></div>
+            <div class="image-set3"><img src="./images/gallery-4.jpg" alt=""></div>
+            <div class="image-set4">
             <img src="./images/gallery-5.jpg" alt="">
-            <img src="./images/gallery-6.jpg" alt="">
+            <img src="./images/gallery-6.jpg" alt=""></div>
         </div>
     </section>
 
@@ -299,7 +322,7 @@
                 <span class="icon"><i class="fa-solid fa-droplet"></i></span>
                 <span class="line"></span>
             </div>
-            <p>Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
+            <p id="message4">Charixy is the charity,Non-profit government organization,fundraising.Our activities help entrepreneurs get the target.</p>
         </div>
         <div class="our-volunteers">
             <div class="volunteer" >
@@ -308,27 +331,29 @@
                 <p>Volunteer</p>
                 
                 <div class="volunteer-acconts">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-google-plus-g"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google-plus-g"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </div>
+            </div>
             <div class="volunteer" id="volunteer2">
                 <img src="./images/volunteer-2.jpg" alt="">
                 <h4>Jack Doe</h4>
                 <p>Volunteer</p>
-                <div class="volunteer-acconts"></div>
+                <div class="volunteer-acconts">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-google-plus-g"></i>
                 <i class="fa-brands fa-linkedin-in"></i>
                 </div>
-            </div>
+                </div>
+            
             <div class="volunteer" id="volunteer3">
                 <img src="./images/volunteer-3.jpg" alt="">
                 <h4>Flora View</h4>
                 <p>Volunteer</p>
-                <div class="volunteer-acconts"></div>
+                <div class="volunteer-acconts">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-google-plus-g"></i>
@@ -339,14 +364,16 @@
                 <img src="./images/volunteer-4.jpg" alt="">
                 <h4>johnny newmen</h4>
                 <p>Volunteer</p>
-                <div class="volunteer-acconts"></div>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-google-plus-g"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
+                
+                <div class="volunteer-acconts">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google-plus-g"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </div>
             </div>
         </div>
+        
 
         <div class="dots">
             <span class="dot" style="background-color: #ff4d2e;"></span>
@@ -403,10 +430,10 @@
             </div>
         </div>
         <div class="footer-section2">
-          <div class="sign-up">
-            <h3>Sign Up For Our Newsletter</h3>
-            <input type="email" name="email" placeholder="Enter email">
-            <button>SUBCRIBES NOW</button>
+            <div class="sign-up">
+                <div><h3>Sign Up For Our Newsletter</h3></div>
+                <div><input type="email" name="email" placeholder="Enter email"></div>
+                <div><button>SUBCRIBES NOW</button>
             </div>
         </div>
         <div class="footer-section3">
@@ -414,6 +441,7 @@
         </div>
     </footer>
 
+    </div>
     
 
 </body>
