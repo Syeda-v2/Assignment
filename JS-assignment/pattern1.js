@@ -3,9 +3,7 @@ function pyramidOne(n){
     for(let i=1; i<=n; i++){
         let str = '';
 
-        for(let s=1; s<=n-i; s++){
-            str += ' ';
-        }
+        str += ' '.repeat(n-i);
 
         for(let j=1; j<=i; j++){
             str += count + ' ';
@@ -15,3 +13,9 @@ function pyramidOne(n){
     }
 }
 pyramidOne(5);
+
+/*  1 
+   1 1 
+  1 1 1 
+ 1 1 1 1 
+1 1 1 1 1  */
