@@ -7,7 +7,7 @@ const person = {
 const prox = new Proxy(person,{
     set(target,prop,value){
         if(prop == 'age' && value >100){
-            console.log("can't update");
+            console.log("cannot update");
             return false;
         }
         target[prop]=value;

@@ -7,7 +7,7 @@ class Stack{
     }
     pop(){
         if(this.employee.length === 0){
-            console.log("stack is empty");
+            console.log("stack empty");
         }
         return this.employee.pop();
     }
