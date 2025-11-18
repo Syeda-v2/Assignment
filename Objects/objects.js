@@ -17,7 +17,7 @@ const prox = new Proxy(person,{
 prox.age=90;
 console.log(person);
 
-//using getters and setters
+// //using getters and setters
 
 const person1={
     name:"john",
@@ -36,4 +36,33 @@ const person1={
 };
 person1.personAge=101;
 console.log(person1);
+
+//using Object.defineProperty
+
+const person2 = {
+    name:"john"
+};
+let _age = 45;
+
+Object.defineProperty(person2,"age",{
+    get: function(){
+        return _age;
+    },
+    set : function(value){
+        if(value<100){
+            _age=value;
+        }else{
+            console.log("cannot update");
+        }
+    },
+    enumerable:true,
+    configurable:true
+
+});
+
+console.log(person2.age);
+person2.age=20;
+console.log(person2.age);
+person2.age=150;
+console.log(person2.age);
 

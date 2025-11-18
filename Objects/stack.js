@@ -1,23 +1,39 @@
-class Stack{
-    constructor(){
-        this.employee=[];
+function Stack(){
+    let employee = [];
+
+    function push(ele){
+        employee.push(ele);
+        return employee;
     }
-    push(ele){
-        this.employee.push(ele);
-    }
-    pop(){
-        if(this.employee.length === 0){
-            console.log("stack empty");
+    function pop(){
+        if(employee.length===0){
+            console.log("stack is empty");
+        }else{
+            employee.pop();
+            return employee;
         }
-        return this.employee.pop();
     }
-    print(){
-        console.log(this.employee);
+    function isEmpty(){
+        if(employee.length===0){
+            return true;
+        }else{
+            return false;
+        }
     }
+    return{
+       push,
+       pop,
+       isEmpty
+    };
 }
-const stack = new Stack();
-stack.push("john");
-stack.push("smith");
-stack.pop();
-stack.print();
+const stack = Stack();
+console.log(stack.push("john"));
+console.log(stack.push("aimen"));
+console.log(stack.pop());
+console.log(stack.isEmpty());
+
+
+
+
+
 
