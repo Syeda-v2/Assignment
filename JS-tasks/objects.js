@@ -1,21 +1,28 @@
-//using Javascript proxy
+function createPerson(name,initialAge){
+    let age = initialAge;
 
-const person = {
-    name:"john",
-    age:50
-}
-const prox = new Proxy(person,{
-    set(target,prop,value){
-        if(prop == 'age' && value >100){
-            console.log("cannot update");
-            return false;
+    return{
+        name,
+        get personAge(){
+            return age;
+        },
+        set personAge(newAge){
+            if(typeof newAge == Number && newAge>0 && newAge<100){
+                age = newAge;
+            }else{
+                console.log("cannot update");
+            }
+
         }
-        target[prop]=value;
-        return true;
-    }
-})
-prox.age=90;
-console.log(person);
+    };
+}
+
+const person3 = new createPerson('john',45);
+person3.personAge = 101;
+console.log(person3.personAge);
+person3.age = 200;
+console.log(person3.personAge);
+
 
 // //using getters and setters
 
@@ -36,6 +43,10 @@ const person1={
 };
 person1.personAge=101;
 console.log(person1);
+person1.age=200;
+console.log(person1);
+
+
 
 //using Object.defineProperty
 
@@ -65,3 +76,5 @@ person2.age=20;
 console.log(person2.age);
 person2.age=150;
 console.log(person2.age);
+console.log(person2);
+
