@@ -18,9 +18,10 @@ function fakeAjax(url, cb) {
         });
 }
 const files = ['file1','file2','file3'];
-const mapping = files.map(getFile);
+
 
 (async function(){
+    const mapping = files.map(getFile);
     for(let a of mapping){
        console.log(await a);
     }
