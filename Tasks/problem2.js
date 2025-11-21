@@ -25,22 +25,26 @@ function fakeAjax(url, cb) {
 
    }
 
-   getFile('file1')
-   .then((text1)=>{
-    console.log(text1);
-    return getFile('file2');
-   })
-   .then((text2)=>{
-    console.log(text2);
-    return getFile('file3');
-   })
-   .then((text3)=>{
-    console.log(text3);
-    return console.log("completed");
+   let files = ['file1','file2','file3'];
+   
+   files.reduce((prevPromise,file)=>{
+    return prevPromise
+    .then(()=>getFile(file))
+    .then((text)=>{
+        console.log(text);
+    })
+   },Promise.resolve())
+
+   .then(()=>{
+    console.log("complete");
    })
    .catch((err)=>{
-    console.log(`Error occured ${err}`);
+    console.log(err);
    })
+
+   
+
+   
 
 
 
