@@ -12,21 +12,62 @@ function fakeAjax(url, cb) {
     }, randomDelay);
 }
 
-    function getFile(file) {
-        return new Promise((resolve,reject)=>{
-            fakeAjax(file,resolve);
+   function getFile(file) {
+    return new Promise((resolve,reject)=>{
+        fakeAjax(file,(response)=>{
+            if(response){
+                resolve(response)
+            }else{
+                reject(new Error(`No response for ${file}`))
+            }
         });
-}
-const files = ['file1','file2','file3'];
+    });
+
+   }
+
+   getFile('file1')
+   .then((text1)=>{
+    console.log(text1);
+    return getFile('file2');
+   })
+   .then((text2)=>{
+    console.log(text2);
+    return getFile('file3');
+   })
+   .then((text3)=>{
+    console.log(text3);
+    return console.log("completed");
+   })
+   .catch((err)=>{
+    console.log(`Error occured ${err}`);
+   })
 
 
-(async function(){
-    const mapping = files.map(getFile);
-    for(let a of mapping){
-       console.log(await a);
-    }
-    console.log('completed');
-})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  

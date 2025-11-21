@@ -13,37 +13,34 @@ function fakeAjax(url,cb){
     },randomDelay);
 }
 
-function delay(ms){
-    return new Promise(resolve => setTimeout(resolve,ms));
-}
-
-const arr = {};
-let files = ['file1','file2','file3'];
+let response = {};
+let arr = ['file1','file2','file3'];
 let count = 0;
- 
-function getFile(file) {
-    fakeAjax(file, function (text) {
-        // what do we do here ???
-        arr[file] = text;
 
-        if(Object.keys(arr).length === 3){
-            delayPrint();
-        }
+ function getFile(file) {
+    fakeAjax(file, function(text){
+        response[file] = {text:text , printed:false};
+        count++;
+        tryToPrint();
     })
 }
 
-async function delayPrint(){
-    const sortKey = Object.keys(arr).sort();
-    for(let f of sortKey){
-        console.log(arr[f]);
-        await delay(1000);
-        count++;
+function tryToPrint(){
+    for(let i=0; i<arr.length; i++){
+        let file = arr[i];
+
+        if(response[file] && !response[file].printed){
+            console.log(response[file].text);
+            response[file].printed=true;
+        }else if(!response[file]){
+            return;
+        }
     }
-    if(count == files.length){
-    console.log("completed");
+    if(count === arr.length){
+        console.log('completed');
+    }
 }
 
-}
 getFile('file1');
 getFile('file2');
 getFile('file3');
