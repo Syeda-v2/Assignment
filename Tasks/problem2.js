@@ -25,21 +25,31 @@ function fakeAjax(url, cb) {
 
    }
 
-   let arr = [getFile('file1'),getFile('file2'),getFile('file3')];
-
-   Promise.allSettled(arr)
-   .then((results)=>{
-    results.forEach(result => {
-        if(result.status== "fulfilled"){
-            console.log(result.value);
-        }
+   let arr = [getFile('file1'), getFile('file2'), getFile('file3')];
+   
+   let promise = Promise.resolve(arr);
+   for(let i=0; i<arr.length; i++){
+    promise = promise.then(()=>{
+        return arr[i];
     })
+    .then((text)=>{
+        console.log(text);
+    })
+   }
+   promise.then(()=>{
+    console.log("completed");
    })
-   .catch((err)=>{
+   promise.catch((err)=>{
     console.log(err);
    })
 
    
+
+
+  
+
+
+  
 
 
 
