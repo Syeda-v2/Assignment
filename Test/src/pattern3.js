@@ -3,7 +3,7 @@ function pascelTriangle(n){
     for(let i=1; i<=n; i++){
         let c=1;
         for(let j=1; j<=i; j++){
-            str += c + ' ';
+            str += c;
 
             c = Math.floor(c * (i-j) /j);
         }
@@ -14,7 +14,6 @@ function pascelTriangle(n){
     }
     return str;
 }
-
-console.log(pascelTriangle(3));
+console.log(pascelTriangle(5));
 module.exports = pascelTriangle;
 
