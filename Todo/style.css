@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(231, 226, 226);
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(29, 102, 104);
+}
+section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#create-todo{
+    width: 20%;
+    color: white;
+    background-color: rgb(29, 102, 104);
+    margin: 2%;
+    padding: 2% 5% ;
+}
+input,textarea{
+    width: 100%;
+}
+input[type=text]{
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+textarea{
+     width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+label{
+    font-size: 20px;
+    font-weight: 600;
+}
+#create-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgb(29, 102, 104);
+    position: relative;
+    left: 78%;
+    font-weight:600;
+    overflow: hidden;
+}
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.todo-item{
+    width: 300px;
+    padding: 15px;
+    background-color:  rgb(29, 102, 104);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: white;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.data{
+    width: 250px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 20px;
+    align-items: center;
+    word-wrap: break-word;
+    text-align: center;
+}
+#btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.edit-btn, .delete-btn{
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
