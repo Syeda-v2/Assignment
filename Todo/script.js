@@ -36,6 +36,7 @@ function renderTodo(){
     
     const t = document.querySelector("#todoTemplate");
     todolist.innerHTML = '';
+    const fragment = new DocumentFragment();
     
     todos.forEach((todo,index)=>{
 
@@ -46,7 +47,8 @@ function renderTodo(){
         clone.querySelector(".edit-btn").onclick = () => editTodo(index);
         clone.querySelector(".delete-btn").onclick = () => deleteTodo(index);
 
-        todolist.appendChild(clone);
+        fragment.append(clone);
+        todolist.appendChild(fragment);
     })
 }
 //edit function
