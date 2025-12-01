@@ -33,24 +33,20 @@ renderTodo();
 
 function renderTodo(){
     todos.sort((a,b) => b.updateAt - a.updateAt);
-
+    
+    const t = document.querySelector("#todoTemplate");
     todolist.innerHTML = '';
+    
     todos.forEach((todo,index)=>{
-        const div = document.createElement("div");
-        div.className = "todo-item";
 
-        div.innerHTML = `
-        <div class="data">
-        <strong>${todo.name}</strong>
-        <p>${todo.disc}</p>
-        </div>
+        const clone = t.content.cloneNode(true);
+        
+        clone.querySelector(".todo-name").textContent = todo.name;
+        clone.querySelector(".todo-disc").textContent = todo.disc;
+        clone.querySelector(".edit-btn").onclick = () => editTodo(index);
+        clone.querySelector(".delete-btn").onclick = () => deleteTodo(index);
 
-        <div id="btns">
-            <button class="edit-btn" onclick="editTodo(${index})">Edit</button><br><br>
-            <button class="delete-btn" onclick="deleteTodo(${index})">Delete</button>
-        </div> `;
-
-        todolist.appendChild(div);
+        todolist.appendChild(clone);
     })
 }
 //edit function

@@ -91,7 +91,7 @@ label{
     word-wrap: break-word;
     text-align: center;
 }
-#btns{
+.btns{
     display: flex;
     justify-content: center;
     gap: 10px;
