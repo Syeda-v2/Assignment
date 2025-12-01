@@ -48,8 +48,8 @@ function renderTodo(){
         clone.querySelector(".delete-btn").onclick = () => deleteTodo(index);
 
         fragment.append(clone);
-        todolist.appendChild(fragment);
     })
+    todolist.appendChild(fragment);
 }
 //edit function
 
