@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Todo App</h1>
+    </header>
+
+    <section>
+        <div id="create-todo">
+            <h2 style="font-size: 30px; text-align: center;">Create todo</h2>
+            
+            <label for="name">Name</label><br><br>
+            <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+            <label for="disc">Discription</label><br><br>
+            <textarea name="disc" id="disc" value="disc" cols="20" rows="5" placeholder="text discription"></textarea><br><br>
+        
+            <button id="create-btn">Create</button>
+        </div>
+    </section>
+
+    <div class="todo-list"></div>
+
+    <template id="todoTemplate">
+        <div class="todo-item">
+            <div class="data">
+                <strong class="todo-name"></strong>
+                <p class="todo-disc"></p>
+            </div>
+
+            <div class="btns">
+                <button class="edit-btn">Edit</button><br><br>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+    </template>
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
