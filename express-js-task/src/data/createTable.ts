@@ -1,6 +1,6 @@
 import pool from '../config/db.js';
 
-const createTable = async => {
+const createTable = () => {
     const queryText = `
     CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
@@ -15,5 +15,4 @@ try{
     console.log("Error creating users table", err);
 }
 }
-
 export default createTable;
