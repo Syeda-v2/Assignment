@@ -1,13 +1,14 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
-const pool = require("./config/db.js")
-const userRoutes = require("./routes/user_routes.js");
-const errorhandler = require("./middleware/errorHandler.js");
-const createTable = require("./data/createTable.js");
+const pool = require("./config/db")
+const userRoutes = require("./routes/user_routes");
+const errorhandler = require("./middleware/errorHandler");
+const createTable = require("./data/createTable");
 import type { Request, Response } from 'express';
 
 const app = express();
-const port = process.env.PORT || 3001;
+// const port = process.env.PORT || 3001;
 
 //Middlewares
 app.use(express.json());
@@ -28,6 +29,8 @@ app.get("/", async(req: Request,res: Response) => {
     res.send(`The database name is : ${result.rows[0].current_database}`)
 })
 
-app.listen(port, () =>{
-    console.log(`Server is running on http://localhost:${port}`)
-});
+// app.listen(port, () =>{
+//     console.log(`Server is running on http://localhost:${port}`)
+// });
+
+module.exports = app;

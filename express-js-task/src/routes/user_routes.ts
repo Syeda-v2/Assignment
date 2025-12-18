@@ -3,8 +3,8 @@ const { createUser,
     deleteUser, 
     getAllUser, 
     getUserByID, 
-    updateUser } = require('../controller/userController.js');
-const validateSchema = require('../middleware/validation.js');
+    updateUser } = require('../controller/userController');
+const validateSchema = require('../middleware/validation');
 const routes = express.Router();
 
 //Routes
