@@ -4,7 +4,7 @@ const { deleteUserService,
     getUserService, 
     updateUserService, 
     createUserService } = require("../models/user_models");
-import type { createUserBody, userParams } from "../types/types.js";
+import type { createUserBody, userParams } from "../types/types";
 
 const handleResponse = <T>(res:Response, status:number, message:string, data: null | T): Response => {
     return res.status(status).json({
