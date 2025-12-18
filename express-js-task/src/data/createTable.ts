@@ -1,4 +1,4 @@
-import pool from '../config/db.js';
+const pool = require('../config/db');
 
 const createTable = () => {
     const queryText = `
@@ -15,4 +15,4 @@ try{
     console.log("Error creating users table", err);
 }
 }
-export default createTable;
+module.exports = createTable;

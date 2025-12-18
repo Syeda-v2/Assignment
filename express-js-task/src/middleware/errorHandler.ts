@@ -9,4 +9,4 @@ const errorhandler = (err: any, req:Request, res:Response, next:NextFunction) =>
     });
 };
 
-export default errorhandler;
+module.exports = errorhandler;

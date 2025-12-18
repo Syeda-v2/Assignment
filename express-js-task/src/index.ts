@@ -1,9 +1,10 @@
-import express from "express"
-import cors from "cors"
-import pool from "./config/db.js"
-import userRoutes from "./routes/user_routes.js"
-import errorhandler from "./middleware/errorHandler.js";
-import createTable from "./data/createTable.js";
+const express = require("express");
+const cors = require("cors");
+const pool = require("./config/db.js")
+const userRoutes = require("./routes/user_routes.js");
+const errorhandler = require("./middleware/errorHandler.js");
+const createTable = require("./data/createTable.js");
+import type { Request, Response } from 'express';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -22,7 +23,7 @@ createTable();
 app.use("/api", userRoutes);
 
 //Testing Postgres Connection
-app.get("/", async(req,res) => {
+app.get("/", async(req: Request,res: Response) => {
     const result = await pool.query("SELECT current_database()");
     res.send(`The database name is : ${result.rows[0].current_database}`)
 })

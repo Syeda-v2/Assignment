@@ -1,6 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import Joi from 'joi';
-
+const Joi = require('joi');
 
 const userSchema = Joi.object({
     name: Joi.string().min(3).required(),
@@ -18,4 +17,5 @@ const validateSchema = (req:Request, res:Response, next:NextFunction)  => {
     next();
 }
 
-export default validateSchema;
+module.exports = validateSchema;
+
