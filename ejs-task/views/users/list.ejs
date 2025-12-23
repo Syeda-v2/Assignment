@@ -1,0 +1,25 @@
+<%- include('../partials/headers') %>
+
+<h2 class="create">Create User</h2>
+
+<a href="/api/create"><button class="btn">Create</button></a>
+
+<div class="users">
+    <% users.forEach((user) => { %>
+        <div class="user">
+            <ul style="list-style-type: none;">
+                <li><%=user.id%></li>
+                <li><%=user.name%></li>
+                <li><%=user.email%></li>
+                
+                
+            </ul>
+            <div class="btns">
+                <a href="/api/edit/<%=user.id%>"><button class="btn" id="update-btn">Upadte</button></a>
+                <a href="/api/delete/<%=user.id%>"><button class="btn">Delete</button></a>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
