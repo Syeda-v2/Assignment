@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@types/connect-flash": "^0.0.40",
     "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.1",
     "connect-flash": "^0.1.1",

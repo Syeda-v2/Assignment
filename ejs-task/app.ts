@@ -23,12 +23,24 @@ app.use(session({
 }))
 declare module "express-session"{
     interface SessionData{
-        id?:number,
-        email:string,
+        user?:{
+        id:number;
+        name:string;
+        email:string;
         password?:string
+        }
     }
 }
 app.use(flash());
+
+declare global{
+    namespace Express{
+        interface Request{
+            flash(type:string, message:string):void;
+            flash(type:string):string[];
+        }
+    }
+}
 
 app.use((req:Request, res:Response, next:NextFunction) => {
     (res as any).locals.success_msg = (req as any).flash('success_msg');
