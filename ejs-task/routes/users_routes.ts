@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/users_controller');
+const isAuth = require('../middelware/auth_middelware');
 
-router.get("/", userController.getUserPage);
-router.get("/create", userController.getCreatePage);
-router.post("/create", userController.craeteUser);
-router.get("/edit/:id", userController.getEditPage);
-router.post("/edit/:id", userController.updateUser);
-router.get("/delete/:id", userController.deleteUser);
+router.get("/", isAuth, userController.getUserPage);
+router.get("/create", isAuth, userController.getCreatePage);
+router.post("/create", isAuth, userController.craeteUser);
+router.get("/edit/:id", isAuth, userController.getEditPage);
+router.post("/edit/:id", isAuth, userController.updateUser);
+router.get("/delete/:id", isAuth, userController.deleteUser);
 
 module.exports = router;
