@@ -1,6 +1,7 @@
 const { User } = require('../models/user');
 import { Request, Response } from 'express';
 
+
 //Show List Page
 exports.getUserPage = async (req:Request ,res:Response) => {
   try{
