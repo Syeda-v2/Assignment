@@ -6,8 +6,8 @@ const authRouter = require('./routes/auth_routes');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
-import { NextFunction } from "express";
 import "express-session";
+const flash_middelware = require('./middelware/flash_middelware');
 
 app.use(express.json());
 app.use(cookieParser());
@@ -23,18 +23,25 @@ app.use(session({
 }))
 declare module "express-session"{
     interface SessionData{
-        id?:number,
-        email:string,
+        user?:{
+        id:number;
+        name:string;
+        email:string;
         password?:string
+        }
+    }
+}
+
+declare global{
+    namespace Express{
+        interface Request{
+            flash(type:string, message:string):void;
+            flash(type:string):string[];
+        }
     }
 }
 app.use(flash());
-
-app.use((req:Request, res:Response, next:NextFunction) => {
-    (res as any).locals.success_msg = (req as any).flash('success_msg');
-    (res as any).locals.error_msg = (req as any).flash('error_msg');
-    next();
-});
+app.use(flash_middelware);
 
 app.use('/api', userRoutes);
 app.use('/auth', authRouter);

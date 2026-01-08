@@ -1,8 +1,12 @@
 <%- include('../partials/headers') %>
 
-<h2 class="create">Create User</h2>
+    <% if (success_msg.length > 0) { %>
+        <div style="color: green;"><%= success_msg %></div>
+    <% } %>
 
-<a href="/api/create"><button class="btn">Create</button></a>
+    <% if (error_msg.length > 0) { %>
+        <div style="color: red;"><%= error_msg %></div>
+    <% } %>
 
 <div class="users">
     <% users.forEach((user) => { %>
@@ -15,7 +19,7 @@
                 
             </ul>
             <div class="btns">
-                <a href="/api/edit/<%=user.id%>"><button class="btn" id="update-btn">Upadte</button></a>
+                <a href="/api/edit/<%=user.id%>"><button class="btn" id="update-btn">Update</button></a>
                 <a href="/api/delete/<%=user.id%>"><button class="btn">Delete</button></a>
             </div>
         </div>

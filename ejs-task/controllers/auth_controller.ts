@@ -1,5 +1,6 @@
 const { Authuser } = require('../models/authuser')
 import { Request, Response } from 'express';
+const bcrypt = require('bcryptjs');
 
 exports.getSignPage = async (req:Request ,res:Response) => {
     res.render('auth/signup');
@@ -11,20 +12,24 @@ exports.signUp = async (req:Request ,res:Response) => {
         const userExists = await Authuser.findOne({where:{email}});
         
         if(userExists){
-            (req as any).flash('success_msg', 'email is already exist');
+            req.flash('success_msg', 'email is already exist');
             res.redirect('/auth/signup');
-            console.log("email is already exist");
+        }
+        const hashed = await bcrypt.hash(password,10);
+
+        const newUser = await Authuser.create({name,email,password:hashed});
+
+        req.session.user={
+            id:newUser.id,
+            name:newUser.name,
+            email:newUser.email
         }
 
-        await Authuser.create({
-            name,
-            email,
-            password
-        });
         res.redirect('/auth/login');
         
     }catch(err:any){
-        (req as any).flash('error_msg', 'something went wrong');
+        req.flash('error_msg', 'something went wrong');
+        console.log(err);
         return res.redirect('/auth/signup');
     }
 }
@@ -39,18 +44,26 @@ exports.loginUser = async (req:Request ,res:Response)=>{
         const user = await Authuser.findOne({where:{email}});
 
         if(!user){
-            (req as any).flash('error_msg', 'email not found');
-            res.redirect('/auth/login',);
+            req.flash('error_msg', 'email not found');
             console.log("email not found");
+            res.redirect('/auth/login',);
         }
-
-        if(user.password!=password){
-            (req as any).flash('error_msg', 'password is wrong');
-            return res.redirect('/auth/login');
-        }
-
-        (req as any).session.user={
+    
+        bcrypt.compare(password, user.password, (err:any, result:any) => {
+            if (err) {
+                console.error('Error comparing passwords:', err);
+                return;
+            }
+            if (result) {
+                console.log('Passwords match! User authenticated.');
+            } else {
+                console.log('Passwords do not match! Authentication failed.');
+            }
+        });
+        
+        req.session.user={
             id:user.id,
+            name:user.name,
             email:user.email,
             password:user.password
         }
@@ -62,7 +75,6 @@ exports.loginUser = async (req:Request ,res:Response)=>{
 
 exports.logout = async (req:Request ,res:Response) => {
     req.session.destroy(()=>{
-        (req as any).flash('success_msg', 'logged out successfully');
         return res.redirect('/auth/login');
     })
 }
