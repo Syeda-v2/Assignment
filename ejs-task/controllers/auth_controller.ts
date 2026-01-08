@@ -45,6 +45,7 @@ exports.loginUser = async (req:Request ,res:Response)=>{
 
         if(!user){
             req.flash('error_msg', 'email not found');
+            console.log("email not found");
             res.redirect('/auth/login',);
         }
     
