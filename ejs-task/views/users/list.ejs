@@ -1,31 +1,64 @@
-<%- include('../partials/headers') %>
+<%- include('../partials/headers') %> 
 
-    <% if (success_msg.length > 0) { %>
-        <div style="color: green;"><%= success_msg %></div>
-    <% } %>
-
-    <% if (error_msg.length > 0) { %>
-        <div style="color: red;"><%= error_msg %></div>
-    <% } %>
-
-<div class="users">
+<div id="list-session">
+  <div class="users">
     <% users.forEach((user) => { %>
-        <div class="user">
-            <ul style="list-style-type: none;">
-                <li><%=user.id%></li>
-                <li><%=user.name%></li>
-                <li><%=user.email%></li>
-                
-                
-            </ul>
-            <div class="btns">
-                <a href="/api/edit/<%=user.id%>"><button class="btn" id="update-btn">Update</button></a>
-                <a href="/api/delete/<%=user.id%>"><button class="btn">Delete</button></a>
-            </div>
-        </div>
+    <div class="user">
+      <ul style="list-style-type: none">
+        <li><%=user.id%></li>
+        <li><%=user.name%></li>
+        <li><%=user.email%></li>
+      </ul>
+      <div class="btns">
+        <button
+          class="btn" id="update-btn"
+          onclick="openUpdatePage('<%=user.id%>','<%=user.name%>','<%=user.email%>')">Update</button>
+        <button
+          class="btn"
+          onclick="openDeletePage('<%=user.id%>','<%=user.name%>','<%=user.email%>')">Delete</button>
+      </div>
+    </div>
     <% }) %>
+  </div>
 </div>
 
+<!-- pop up -->
+
+<div id="update-session">
+  <div class="update-content">
+    <h2>Update User</h2><br/>
+    <input type="hidden" id="userid"/>
+
+    <label>Name</label>
+    <input id="username" type="text" placeholder="Enter name" required/>
+
+    <label>Email</label>
+    <input id="useremail" type="text" placeholder="email" required/>
+
+    <button id="save-btn" class="btn" onclick="update()">Save</button>
+    <button id="cancel-btn" class="btn" onclick="closeUpdatePage()">Cancel</button>
+  </div>
+</div>
+
+<!-- delete pop up -->
+
+<div id="delete-session">
+  <div class="delete-content">
+    <h2>Delete User</h2><br/>
+    <h3>You want to delete user</h3><br/>
+    
+    <p id="deleteUsername"></p><br/>
+    <p id="deleteUseremail"></p><br/>
+
+    <input type="hidden" id="userid"/>
+
+    <button id="save-btn" class="btn" onclick="deleteUser()">Delete</button>
+    <button id="cancel-btn" class="btn" onclick="closeDeletePage()">Cancel</button>
+  </div>
+</div>
+
+<br>
 <a href="/auth/logout"><button class="btn">Logout</button></a>
 
+<script src="/index.js"></script>
 <%- include('../partials/footer') %>
