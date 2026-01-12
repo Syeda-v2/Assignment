@@ -1,33 +1,41 @@
-const list_session = document.getElementById("list-session");
-const update_session = document.getElementById("update-session");
-const delete_session = document.getElementById("delete-session");
-
-function openUpdatePage(id, name, email) {
-  document.getElementById("userid").value = id;
-  document.getElementById("username").value = name;
-  document.getElementById("useremail").value = email;
-  update_session.style.display = "block";
-}
-
-function closeUpdatePage() {
-  update_session.style.display = "none";
-  list_session.style.display = "block";
-}
-
-function openDeletePage(id, name, email) {
-  document.getElementById("userid").value = id;
-  document.getElementById("deleteUsername").innerHTML = name;
-  document.getElementById("deleteUseremail").innerHTML = email;
-  delete_session.style.display = "block";
-}
-
-function closeDeletePage() {
-  delete_session.style.display = "none";
-}
-
-async function update() {
+//Open Update Page
+async function openUpdatePage(id) {
   try {
-    const id = document.getElementById("userid").value;
+    const response = await fetch(`/api/${id}/edit`, {
+      method: "GET",
+    })
+      .then((res) => res.text())
+      .then(
+        (html) => (document.getElementById("update-model").innerHTML = html)
+      );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+//Open Delete Page
+async function openDeletePage(id) {
+  try {
+    const response = await fetch(`/api/${id}/delete`, {
+      method: "GET",
+    })
+      .then((res) => res.text())
+      .then(
+        (html) => (document.getElementById("update-model").innerHTML = html)
+      );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+//Close Page
+function closePage() {
+  document.getElementById("update-model").innerHTML = "";
+}
+
+//Update Logic
+async function update(id) {
+  try {
     const name = document.getElementById("username").value;
     const email = document.getElementById("useremail").value;
 
@@ -51,11 +59,9 @@ async function update() {
   }
 }
 
-async function deleteUser() {
+//Delete Logic
+async function deleteUser(id) {
   try {
-    const id = document.getElementById("userid").value;
-    console.log(id);
-
     const res = await fetch(`/api/delete/${id}`, {
       method: "GET",
     });

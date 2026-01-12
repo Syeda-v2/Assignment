@@ -1,0 +1,26 @@
+<div id="update-session">
+  <div class="update-content">
+    <h2>Update User</h2><br/>
+
+    <label for="name">Name</label>
+    <input
+      id="username"
+      type="text"
+      placeholder="Enter name"
+      value="<%=user.name%>"
+      required/>
+
+    <label for="email">Email</label>
+    <input
+      id="useremail"
+      type="text"
+      placeholder="email"
+      value="<%=user.email%>"
+      required/>
+
+    <button id="save-btn" class="btn" onclick="update('<%=user.id%>')">Save</button>
+    <button id="cancel-btn" class="btn" onclick="closePage()">Cancel</button>
+  </div>
+</div>
+
+<script src="/index.js"></script>

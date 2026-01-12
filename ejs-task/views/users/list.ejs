@@ -11,51 +11,16 @@
       </ul>
       <div class="btns">
         <button
-          class="btn" id="update-btn"
-          onclick="openUpdatePage('<%=user.id%>','<%=user.name%>','<%=user.email%>')">Update</button>
+          class="btn" id="update-btn" onclick="openUpdatePage('<%=user.id%>')">Update</button>
         <button
-          class="btn"
-          onclick="openDeletePage('<%=user.id%>','<%=user.name%>','<%=user.email%>')">Delete</button>
+          class="btn" onclick="openDeletePage('<%=user.id%>')">Delete</button>
       </div>
     </div>
     <% }) %>
   </div>
 </div>
 
-<!-- pop up -->
-
-<div id="update-session">
-  <div class="update-content">
-    <h2>Update User</h2><br/>
-    <input type="hidden" id="userid"/>
-
-    <label>Name</label>
-    <input id="username" type="text" placeholder="Enter name" required/>
-
-    <label>Email</label>
-    <input id="useremail" type="text" placeholder="email" required/>
-
-    <button id="save-btn" class="btn" onclick="update()">Save</button>
-    <button id="cancel-btn" class="btn" onclick="closeUpdatePage()">Cancel</button>
-  </div>
-</div>
-
-<!-- delete pop up -->
-
-<div id="delete-session">
-  <div class="delete-content">
-    <h2>Delete User</h2><br/>
-    <h3>You want to delete user</h3><br/>
-    
-    <p id="deleteUsername"></p><br/>
-    <p id="deleteUseremail"></p><br/>
-
-    <input type="hidden" id="userid"/>
-
-    <button id="save-btn" class="btn" onclick="deleteUser()">Delete</button>
-    <button id="cancel-btn" class="btn" onclick="closeDeletePage()">Cancel</button>
-  </div>
-</div>
+<div id="update-model"></div>
 
 <br>
 <a href="/auth/logout"><button class="btn">Logout</button></a>

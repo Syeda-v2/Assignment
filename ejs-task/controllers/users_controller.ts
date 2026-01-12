@@ -11,6 +11,16 @@ exports.getUserPage = async (req: Request, res: Response) => {
   }
 }
 
+//Update User Page
+exports.openEditPage = async (req: Request, res: Response) => {
+  try {
+    const user = await Authuser.findByPk(req.params.id);
+    res.render("./users/edit", { user });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+}
+
 //Update User
 exports.updateUser = async (req: Request, res: Response) => {
   try {
@@ -25,6 +35,16 @@ exports.updateUser = async (req: Request, res: Response) => {
     );
     res.json({ success: true });
 
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+}
+
+//Delete User Page
+exports.openDeletePage = async (req: Request, res: Response) => {
+  try {
+    const user = await Authuser.findByPk(req.params.id);
+    res.render("./users/delete", { user });
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }
