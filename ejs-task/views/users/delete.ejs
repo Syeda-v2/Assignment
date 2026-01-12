@@ -1,0 +1,14 @@
+<div id="delete-session">
+  <div class="delete-content">
+    <h2>Delete User</h2><br/>
+    <h3>You want to delete user</h3><br/>
+    
+    <p><%=user.name%></p><br>
+    <p><%=user.email%></p><br>
+
+    <button id="save-btn" class="btn" onclick="deleteUser('<%=user.id%>')">Delete</button>
+    <button id="cancel-btn" class="btn" onclick="closePage()">Cancel</button>
+  </div>
+</div>
+
+<script src="/index.js"></script>

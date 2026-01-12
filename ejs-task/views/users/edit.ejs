@@ -1,15 +1,26 @@
-<%- include('../partials/headers') %>
-    <h2>Edit User</h2>
+<div id="update-session">
+  <div class="update-content">
+    <h2>Update User</h2><br/>
 
-    <form action="/api/edit/<%=user.id%>" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Enter name" value="<%=user.name%>" required/>
+    <label for="name">Name</label>
+    <input
+      id="username"
+      type="text"
+      placeholder="Enter name"
+      value="<%=user.name%>"
+      required/>
 
-        <label>Email</label>
-        <input type="text" name="email" placeholder="email" value="<%=user.email%>" required/>
+    <label for="email">Email</label>
+    <input
+      id="useremail"
+      type="text"
+      placeholder="email"
+      value="<%=user.email%>"
+      required/>
 
-        <button class="btn">Update</button>
-        <a href="/users/list"><button class="btn">Back</button></a>
+    <button id="save-btn" class="btn" onclick="update('<%=user.id%>')">Save</button>
+    <button id="cancel-btn" class="btn" onclick="closePage()">Cancel</button>
+  </div>
+</div>
 
-    </form>
-<%- include('../partials/footer') %>
+<script src="/index.js"></script>
